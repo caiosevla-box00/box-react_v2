@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+:root {
+  --verde:    #AAFF00;
+  --vdim:     #5abf00;
+  --vbg:      #0d1a00;
+  --bg:       #0a0a0a;
+  --s1:       #161616;
+  --s2:       #111;
+  --borda:    #222;
+  --dim:      #666;
+  --txt:      #f0f0f0;
+  --txt2:     #aaa;
+  --alerta:   #f0a500;
+  --erro:     #ff6b6b;
+  --azul:     #74b9ff;
+  --r:        12px;
+  --nav-h:    64px;
+  --head-h:   56px;
+}
+
+[data-theme="light"] {
+  --verde:  #3d8b00;
+  --vdim:   #2d6800;
+  --vbg:    #efffde;
+  --bg:     #f5f5f5;
+  --s1:     #fff;
+  --s2:     #f8f8f8;
+  --borda:  #e0e0e0;
+  --dim:    #888;
+  --txt:    #111;
+  --txt2:   #555;
+  --alerta: #c47000;
+  --erro:   #cc2222;
+  --azul:   #1565c0;
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--txt);
+  font-family: 'Inter', -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { display: none; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+@keyframes pulseV {
+  0%,100% { box-shadow: 0 0 0 0 rgba(170,255,0,.4); }
+  50%     { box-shadow: 0 0 0 10px rgba(170,255,0,0); }
+}
+
+.fade-up  { animation: fadeUp .18s ease both; }
+.slide-up { animation: slideUp .25s cubic-bezier(.32,1.2,.64,1) both; }
+
+button { -webkit-tap-highlight-color: transparent; transition: opacity .1s, transform .1s; }
+button:active { opacity: .8; transform: scale(.97); }
+
+input, select, textarea {
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  -webkit-appearance: none;
+  appearance: none;
+}
+input[type=number]::-webkit-inner-spin-button { -webkit-appearance: none; }
